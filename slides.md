@@ -258,7 +258,7 @@ h1 {
 
 # 本次宣讲的目标
 
-- 了解什么是前端工程化；
+- 了解前端工程化；
 - 掌握从0到1「愉快地」开发一个现代化web应用的能力；
 
 <style>
@@ -281,10 +281,42 @@ xxxx
 
 # 如何开始
 
-- 技术选型（VUE / REACT / ANGULAR ?）
+- 技术选型
 - 初始化一个项目
 - 组件定制
 - 构建部署
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+xxxx
+-->
+
+---
+
+# 技术选型
+如何进行技术选型（VUE / REACT / ANGULAR / ...）?
+
+|  | Angular | React | Vue |
+| --- | --- | --- | --- |
+| 发行时间 | 2010年 | 2013年 | 2014 |
+| 开发方式 | TypeScript | 一切都是JavaScript的方式 | JavaScript/HTML/TypeScript |
+| 模型 | Incremental DOM  | Virtual DOM | Virtual DOM |
+| 学习曲线 | 陡峭 | 中等 | 平滑 |
+| 性能 | 一般 | 高 | 高 |
+| 复杂性 | 高 | 中 | 低 |
+| 灵活性 | 低 | 中 | 高 |
+| 适合场景 | 大规模、功能丰富的应用 | 现代Web渲染SPA应用 | 中小型Web SPA应用 |
 
 <style>
 h1 {
@@ -516,9 +548,9 @@ class: text-center
 ---
 
 # THANK YOU !
-制造高质量的现代前端应用
+# 智造高质量的现代前端应用
 
-蜂泰科技 ｜ 徐健
+## 蜂泰科技 ｜ 徐健
 
 <style>
 h1 {
