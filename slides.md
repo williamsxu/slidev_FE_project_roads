@@ -453,6 +453,39 @@ h1 {
 # React or Vue ?
 我们当然选择渐进式JavaScript 框架。 -- 子可能曰过
 
+<div class="grid grid-cols-3 gap-x-4 my-10">
+<div>
+<div class="my-1 mx-5" style="color:rgba(200,16,46,1)">历史因素</div>
+<br>
+<div class="my-1 mx-5" style="color:#505759;line-height:33px;">从Jquery时代过渡</div>
+<div class="my-1 mx-5" style="color:#505759;line-height:33px;">学习曲线平滑</div>
+</div>
+
+<div>
+<div class="my-1 mx-5" style="color:rgba(200,16,46,1)">性能优势</div>
+<br>
+<span class="my-1 mx-5" style="color:#505759;line-height:33px;">数据驱动</span><br>
+<span class="my-1 mx-5" style="color:#505759;line-height:33px;">灵活性</span><br>
+<span class="my-1 mx-5" style="color:#505759;line-height:33px;">规模化向上/向下扩展</span><br>
+<span class="my-1 mx-5" style="color:#505759;line-height:33px;">运行时性能</span><br>
+<span class="my-1 mx-5" style="color:#505759;line-height:33px;">真香</span>
+</div>
+
+<div>
+<div class="my-1 mx-5" style="color:rgba(200,16,46,1)">未来发展</div>
+<br>
+<span class="my-1 mx-5" style="color:#505759;line-height:33px;">Github上升最快</span><br>
+<span class="my-1 mx-5" style="color:#505759;line-height:33px;">专职团队维护</span><br>
+<span class="my-1 mx-5" style="color:#505759;line-height:33px;">社区活跃性高</span><br>
+<span class="my-1 mx-5" style="color:#505759;line-height:33px;">未来可期</span>
+</div>
+
+</div>
+
+<div class="flex my-30">
+<span style='color:#333;'>当然，如果现场有Angular用户，上面的当我没说。</span>
+<svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round"/><path d="M33 16L29 20L33 24" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 31C31 31 29 35 24 35C19 35 17 31 17 31" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="20" r="4" fill="none" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
 
 
 <style>
