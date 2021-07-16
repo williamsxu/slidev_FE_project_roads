@@ -343,7 +343,7 @@ xxxx
 
 ### 编写
 
-```ts 
+```ts {4}
 @Component({
   selector: 'todos-cmp',
   template: `
@@ -364,7 +364,7 @@ class TodosComponent {
 
 ### 编译后
 
-```ts 
+```ts {10-15}
 var TodosComponent = /** @class */ (function () {
   function TodosComponent(store) {/* store component */}
   TodosComponent.ngComponentDef = defineComponent({
@@ -422,10 +422,10 @@ Virtual DOM DIFF
 <div>
 主要优点:
 
-<div class='flex my-4'><img src="/img/check.png" class="w-5 h-5"/>
+<div class='flex my-4'><img src="/img/check-circle.gif" class="w-10 h-10"/>
 <span class="mx-4">对真实 DOM 进行抽象描述，除了核心属性外可以用来扩展，灵活性极强。甚至可以跨平台，渲染到DOM（web）之外的平台。比如ReactNative，Weex.</span>
 </div>
-<div class='flex'><img src="/img/check.png" class="w-5 h-5"/>
+<div class='flex'><img src="/img/check-circle.gif" class="w-10 h-10"/>
 <span class="mx-4">拥有非常高的运行时性能，可以减少直接操作DOM，指定特定的组件进行重新渲染。避免整体更新DOM带来的高代价计算。</span>
 </div>
 </div>
@@ -446,6 +446,29 @@ h1 {
 <!--
 可以看到，真正的 DOM 元素是非常庞大的，因为浏览器的标准就把 DOM 设计的非常复杂。当我们频繁的去做 DOM 更新，会产生一定的性能问题。而 Virtual DOM 就是用一个原生的 JS 对象去描述一个 DOM 节点，所以它比创建一个 DOM 的代价要小很多。
 虚拟 DOM 的真实意义不是他的性能，而是他提供了无限的可能，他是对 真实 DOM 的抽象，你可以用一门全新的语言写下代码，抽象为 虚拟 DOM，然后再通过社区其他成员编写完成的 虚拟 DOM 库，来转为各种平台（ios、android）的页面，只要有一个框架实现这个转换，其他框架都可以享受这个红利。
+-->
+
+---
+
+# React or Vue ?
+我们当然选择渐进式JavaScript 框架。 -- 子可能曰过
+
+
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+
 -->
 
 ---
