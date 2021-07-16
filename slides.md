@@ -60,7 +60,7 @@ layout: 'intro'
 前端技术演进历史：/*待补充图表*/
 - **上古时代（1990-2004）** - 静态页面—>javascript-->动态页面
 - **web2.0时代（2004-2008）** - 动态交互、数据交互的需求增多 | Ajax开始流行、异步Http请求（典型代表jQuery）
-- **发展大爆炸时代（2008-2015）** - 谷歌 V8 引擎发布 | 2009年 Node.js爆发 ｜ MCV、MVVM、SPA应用框架(典型代表AngularJS、ReactJS、VueJS)
+- **发展大爆炸时代（2008-2015）** - 谷歌 V8 引擎发布 | 2009年 Node.js爆发 ｜ MCV、MVVM、SPA应用框架(典型代表Angular、React、Vue)
 - **今天的前端（2015-2020）** - 跨端（小程序、跨容器、跨平台、跨OS）｜ 标准成熟（ECMA、包管理、构建、框架、nodejs、Hybrid ...）
 - **未来的前端（2020~）** - 可视化 ｜ 智能化｜ 工具链 | serverless | lowcode/nocode ｜ WebAssembly
 <br>
@@ -79,8 +79,7 @@ h1 {
 }
 </style>
 <!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
+前端的开发工作在一些场景下被认为只是日常的一项简单工作，或只是某个项目的"附属品"，并没有被当做一个"软件"而认真对待（无论是产品负责人还是开发者）。然而无论你如何对待它，也无法否定前端是一种 GUI 软件的事实，因此其也就必然遵循时间、质量、成本相互制约的特性。对于时间和成本的控制必然将导致最终产出倾向于出现"质量低"、"可维护性差"、"可用性差"等问题。过去我们以牺牲质量的方式换取时间和成本，现在趟了前辈们早已趟过的坑，然后发现还是要重新审视"前端"这一软件开发活动，并且使用软件工程这套早已存在的体系去对前端项目进行管理。
 -->
 ---
 
@@ -332,6 +331,121 @@ h1 {
 
 <!--
 xxxx
+-->
+
+---
+
+# Incremental DOM
+每个组件都被编译成一系列指令。这些指令创建 DOM 树并在数据更改时就地更新它们。
+
+<div class="grid grid-cols-2 gap-x-4">
+<div>
+
+### 编写
+
+```ts 
+@Component({
+  selector: 'todos-cmp',
+  template: `
+    <div *ngFor="let t of todos|async">
+        {{t.description}}
+    </div>
+  `
+})
+class TodosComponent {
+  todos: Observable<Todo[]> = this.store.pipe(select('todos'));
+  constructor(private store: Store<AppState>) {}
+}
+```
+
+</div>
+
+<div>
+
+### 编译后
+
+```ts 
+var TodosComponent = /** @class */ (function () {
+  function TodosComponent(store) {/* store component */}
+  TodosComponent.ngComponentDef = defineComponent({
+    type: TodosComponent,
+    selectors: [["todos-cmp"]],
+    factory: function TodosComponent_Factory(t) {
+      return new (t || TodosComponent)(directiveInject(Store));
+    },consts: 2,vars: 3,
+    template: function TodosComponent_Template(rf, ctx) {
+      if (rf & 1) { // create dom
+        pipe(1, "async");
+        template(0, TodosComponent_div_Template_0, 2, 1, null, _c0);
+      } if (rf & 2) { // update dom
+        elementProperty(0, "ngForOf", bind(pipeBind1(1, 1, ctx.todos)));
+      }
+    },encapsulation: 2
+  });
+  return TodosComponent;
+}());
+```
+
+</div>
+
+</div>
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+每个组件都被编译成一系列指令。这些指令创建 DOM 树并在数据更改时就地更新它们。模板函数包含渲染和更新 DOM 的指令。请注意，这些指令不会被框架的渲染引擎解释。它们是渲染引擎。为什么 Google 团队使用增量 DOM 而不是虚拟 DOM？他们有一个目标：应用程序必须在移动设备上运行良好。这主要意味着优化两件事：包大小和内存占用。如果视图树没有改动，那么刷新一次成本为0。因为视图树没有收到更新的指令不会从头开始渲染。
+-->
+
+---
+
+# Virtual DOM
+每个组件每次重新渲染时都会根据需要创建和更新新的虚拟 DOM 树，然后对浏览器 DOM 应用一系列转换以匹配新的虚拟 DOM 树。
+
+<div class="grid grid-cols-2 gap-x-4">
+<div>
+ORIGINAL DIV DOM
+<img src="/img/dom.png" class="w-90"/>
+
+Virtual DOM DIFF
+<img src="/img/virtual_dom.png"/>
+</div>
+<div>
+主要优点:
+
+<div class='flex my-4'><img src="/img/check.png" class="w-5 h-5"/>
+<span class="mx-4">对真实 DOM 进行抽象描述，除了核心属性外可以用来扩展，灵活性极强。甚至可以跨平台，渲染到DOM（web）之外的平台。比如ReactNative，Weex.</span>
+</div>
+<div class='flex'><img src="/img/check.png" class="w-5 h-5"/>
+<span class="mx-4">拥有非常高的运行时性能，可以减少直接操作DOM，指定特定的组件进行重新渲染。避免整体更新DOM带来的高代价计算。</span>
+</div>
+</div>
+</div>
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+可以看到，真正的 DOM 元素是非常庞大的，因为浏览器的标准就把 DOM 设计的非常复杂。当我们频繁的去做 DOM 更新，会产生一定的性能问题。而 Virtual DOM 就是用一个原生的 JS 对象去描述一个 DOM 节点，所以它比创建一个 DOM 的代价要小很多。
+虚拟 DOM 的真实意义不是他的性能，而是他提供了无限的可能，他是对 真实 DOM 的抽象，你可以用一门全新的语言写下代码，抽象为 虚拟 DOM，然后再通过社区其他成员编写完成的 虚拟 DOM 库，来转为各种平台（ios、android）的页面，只要有一个框架实现这个转换，其他框架都可以享受这个红利。
 -->
 
 ---
