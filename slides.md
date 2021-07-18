@@ -84,7 +84,7 @@ h1 {
 ---
 
 # 工程化的意义?
-> The only constant in the world is change.
+> The only constant in the world is change.<br>
 > 世界上唯一不变的是变化。——《谁动了我的奶酪》作者 斯宾塞·约翰逊
 
 工程化之前遇到的问题：/*待补充图表*/
@@ -283,7 +283,7 @@ xxxx
 /*待补充图表*/
 
 1. 技术选型
-2. 初始化一个项目
+2. 开始一个项目
 3. 组件定制
 4. 构建部署
 
@@ -338,7 +338,7 @@ xxxx
 
 ---
 
-# Incremental DOM
+# 技术选型 - Incremental DOM
 > 每个组件都被编译成一系列指令。这些指令创建 DOM 树并在数据更改时就地更新它们。
 
 <div class="grid grid-cols-2 gap-x-4">
@@ -411,7 +411,7 @@ h1 {
 
 ---
 
-# Virtual DOM
+# 技术选型 - Virtual DOM
 > 每个组件每次重新渲染时都会根据需要创建和更新新的虚拟 DOM 树，然后对浏览器 DOM 应用一系列转换以匹配新的虚拟 DOM 树。
 
 <div class="grid grid-cols-2 gap-x-4">
@@ -453,7 +453,7 @@ h1 {
 
 ---
 
-# React or Vue ?
+# 技术选型 - React or Vue ?
 > 我们当然选择渐进式JavaScript 框架。 -- 子可能曰过
 
 <div class="grid grid-cols-3 gap-x-4 my-10">
@@ -490,6 +490,86 @@ h1 {
 <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="48" height="48" fill="white" fill-opacity="0.01"/><path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" fill="none" stroke="#333" stroke-width="4" stroke-linejoin="round"/><path d="M33 16L29 20L33 24" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M31 31C31 31 29 35 24 35C19 35 17 31 17 31" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="20" r="4" fill="none" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
 </div>
 
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+
+-->
+
+---
+
+# 开始一个项目
+> Talk is cheap. Show me the code.  —— Linus Torvalds
+
+<br>
+<br>
+
+1. 使用脚手架 Vue Cli
+```sh
+npm install -g @vue/cli
+```
+
+2. 创建一个项目
+```sh
+vue create fintech-financeRecon-portal
+```
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+
+-->
+
+---
+
+# 开始一个项目 - 如何规范地开始
+> convention over configuration  约定优于配置
+
+* 规范工程结构
+```sh
+├── README.md		//说明文件
+├── package.json	// 打包配置文件	 
+├── src
+│   ├── App.vue		// 应用入口
+│   ├── api         // api 定义
+│   ├── assets      // 素材文件
+│   ├── components	// 自定义组件
+│   │   ├── Charts
+│   ├── config     // 应用内部设置
+│   │   └── defaultSettings.js
+│   ├── main.js    // js入口
+│   ├── router.js  // 路由入口
+│   ├── store      // 缓存配置
+│   ├── utils      // 工具
+│   │   ├── axios.js
+│   │   └── utils.js
+│   └── views      // 页面
+│       ├── 404.vue
+├── .env.dev      // 开发环境配置
+├── .env.prod     // 生产环境配置
+├── ...
+```
 
 <style>
 h1 {
