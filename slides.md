@@ -53,7 +53,7 @@ layout: 'intro'
 
 # 前端到底是什么?
 
-前端开发是创建WEB页面或APP等前端界面呈现给用户的过程，通过HTML，CSS及JavaScript以及衍生出来的各种技术、框架、解决方案，来实现互联网产品的用户界面交互。 --百度百科
+> 前端开发是创建WEB页面或APP等前端界面呈现给用户的过程，通过HTML，CSS及JavaScript以及衍生出来的各种技术、框架、解决方案，来实现互联网产品的用户界面交互。 —— 百度百科
 
 <br>
 
@@ -84,13 +84,14 @@ h1 {
 ---
 
 # 工程化的意义?
-
-The only constant in the world is change.
-世界上唯一不变的是变化。–《谁动了我的奶酪》作者 斯宾塞·约翰逊
+> The only constant in the world is change.
+> 世界上唯一不变的是变化。——《谁动了我的奶酪》作者 斯宾塞·约翰逊
 
 工程化之前遇到的问题：/*待补充图表*/
 <br>
-最早的前端开发就是实现页面，顶多再写写JS让页面可以有交互的特效。但是随着需求的增加，我们不仅要做Web应用，还要做App、小程序以及各种端。在这种需求日增的情况下，必须得考虑一种新的方式，优化前端的开发工作，例如，解决代码冗余，项目可维护性，提升版本迭代速度等等一系列的问题。前端工程化的概念也就是在这中情况下被提出了。
+- 最早的前端开发就是实现页面，顶多再写写JS让页面可以有交互的特效。
+- 但是随着需求的增加，我们不仅要做Web应用，还要做App、小程序以及各种端。在这种需求日增的情况下，必须得考虑一种新的方式，优化前端的开发工作，
+- 例如，解决代码冗余，项目可维护性，提升版本迭代速度等等一系列的问题。前端工程化的概念也就是在这中情况下被提出了。
 <br>
 <br>
 
@@ -114,7 +115,7 @@ IT 行业变化太快了，尤其是前端开发（Frontend Development）。如
 ---
 
 # 什么是前端工程化?
-解放生产力、提高生产效率。通过制定相应的规范，借助一系列工具和手段解决整个工作流程中的痛点。
+> 解放生产力、提高生产效率。通过制定相应的规范，借助一系列工具和手段解决整个工作流程中的痛点。
 
 特点：/*待补充图表*/
 - 模块化
@@ -151,7 +152,7 @@ h1 {
 
 
 # 前端工程化--模块化
-模块化是指将一个文件拆分成多个相互依赖的文件，最后进行统一的打包和加载，这样能够很好的保证高效的多人协作。
+> 模块化是指将一个文件拆分成多个相互依赖的文件，最后进行统一的打包和加载，这样能够很好的保证高效的多人协作。
 
 - JS 模块化：CommonJS、AMD、CMD 以及 ES6 Module。
 - CSS 模块化：Sass、Less、Stylus、BEM、CSS Modules 等。其中预处理器和 BEM 都会有的一个问题就是样式覆盖。而 CSS Modules 则是通过 JS 来管理依赖，最大化的结合了 JS 模块化和 CSS 生态，比如 Vue 中的 style scoped。
@@ -176,7 +177,7 @@ h1 {
 ---
 
 # 前端工程化--组件化
-不同于模块化，模块化是对文件、对代码和资源拆分，而组件化则是对 UI 层面的拆分。
+> 不同于模块化，模块化是对文件、对代码和资源拆分，而组件化则是对 UI 层面的拆分。
 
 通常，我们会需要对页面进行拆分，将其拆分成一个一个的零件，然后分别去实现这一个个零件，最后再进行组装。 在我们的实际业务开发中，对于组件的拆分我们需要做不同程度的考量，其中主要包括细粒度和通用性这两块的考虑。 对于业务组件，你更多需要考量的是针对你负责业务线的一个适用度，即你设计的业务组件是否成为你当前业务的 “通用” 组件。
 
@@ -200,7 +201,7 @@ h1 {
 
 # 前端工程化--规范化
 
-正所谓无规矩不成方圆，为了更好的协作和维护代码。在开发过程中会不断演进各种规范。
+> 正所谓无规矩不成方圆，为了更好的协作和维护代码。在开发过程中会不断演进各种规范。
 
 - 项目目录结构、命名规范;
 - 编码规范：对于编码这块的约束，一般我们都会采用一些强制措施，比如 ESLint、StyleLint 等;
@@ -230,7 +231,7 @@ h1 {
 
 # 前端工程化--自动化
 
-自动化合并、构建、打包能为我们节省很多工作。
+> 自动化合并、构建、打包能为我们节省很多工作。
 
 - webpack;
 - jenkins;
@@ -278,12 +279,13 @@ xxxx
 
 ---
 
-# 如何开始
+# 如何开始 
+/*待补充图表*/
 
-- 技术选型
-- 初始化一个项目
-- 组件定制
-- 构建部署
+1. 技术选型
+2. 初始化一个项目
+3. 组件定制
+4. 构建部署
 
 <style>
 h1 {
@@ -304,7 +306,8 @@ xxxx
 ---
 
 # 技术选型
-如何进行技术选型（VUE / REACT / ANGULAR / ...）?
+
+> 如何进行技术选型（VUE / REACT / ANGULAR / ...）?
 
 |  | Angular | React | Vue |
 | --- | --- | --- | --- |
@@ -336,7 +339,7 @@ xxxx
 ---
 
 # Incremental DOM
-每个组件都被编译成一系列指令。这些指令创建 DOM 树并在数据更改时就地更新它们。
+> 每个组件都被编译成一系列指令。这些指令创建 DOM 树并在数据更改时就地更新它们。
 
 <div class="grid grid-cols-2 gap-x-4">
 <div>
@@ -409,7 +412,7 @@ h1 {
 ---
 
 # Virtual DOM
-每个组件每次重新渲染时都会根据需要创建和更新新的虚拟 DOM 树，然后对浏览器 DOM 应用一系列转换以匹配新的虚拟 DOM 树。
+> 每个组件每次重新渲染时都会根据需要创建和更新新的虚拟 DOM 树，然后对浏览器 DOM 应用一系列转换以匹配新的虚拟 DOM 树。
 
 <div class="grid grid-cols-2 gap-x-4">
 <div>
@@ -451,7 +454,7 @@ h1 {
 ---
 
 # React or Vue ?
-我们当然选择渐进式JavaScript 框架。 -- 子可能曰过
+> 我们当然选择渐进式JavaScript 框架。 -- 子可能曰过
 
 <div class="grid grid-cols-3 gap-x-4 my-10">
 <div>
@@ -725,7 +728,7 @@ class: text-center
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-image: linear-gradient(45deg, #4EC5D4 20%, #146b8c 20%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -745,4 +748,18 @@ class: text-center
 
 # One More Thing
 
-本次演示所用的代码基于：[https://sli.dev](https://sli.dev)
+## 本次演示所用的代码基于：[https://sli.dev](https://sli.dev)
+
+<style>
+h1,h2 {
+  background: linear-gradient(
+141.27deg
+,#ff904e -4.24%,#ff5982 21.25%,#ec68f4 44.33%,#79e2ff 83.46%);
+background-size: 200%;
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-animation: gradient-data-v-fb6d3afe 10s ease infinite;
+animation: gradient-data-v-fb6d3afe 10s ease infinite;
+-webkit-text-fill-color: transparent;
+}
+</style>
