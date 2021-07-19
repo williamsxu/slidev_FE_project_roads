@@ -283,8 +283,8 @@ xxxx
 /*待补充图表*/
 
 1. 技术选型
-2. 开始一个项目
-3. 组件建造
+2. 初始化项目
+3. 制造组件
 4. 构建部署
 
 <style>
@@ -509,7 +509,7 @@ h1 {
 
 ---
 
-# 开始一个项目 - 初始化工程
+# 初始化项目 - 初始化工程
 > Talk is cheap. Show me the code.  —— Linus Torvalds
 
 <br>
@@ -547,7 +547,7 @@ h1 {
 
 ---
 
-# 开始一个项目 - 规范的开始
+# 初始化项目 - 规范的开始
 > convention over configuration  约定优于配置
 
 * 规范工程结构
@@ -593,7 +593,7 @@ h1 {
 
 ---
 
-# 开始一个项目 - 组件的组织
+# 制造组件 - 组件的组织
 > 不搞组件的前端不是个好前端。
 
 <div class="grid grid-cols-2 gap-x-4">
@@ -641,7 +641,7 @@ h1 {
 
 ---
 
-# 开始一个项目 - 组件的诞生1
+# 制造组件 - 组件的诞生1
 > 前端组件化开发，将需要独立某个页面或者模块，以黑盒的形式全部封装到起来，提供对外暴露简便的入口来调用。
 
 一个 table 示例 - 数据绑定
@@ -705,7 +705,7 @@ h1 {
 
 ---
 
-# 开始一个项目 - 组件的诞生2
+# 制造组件 - 组件的诞生2
 > 前端组件化开发，将需要独立某个页面或者模块，以黑盒的形式全部封装到起来，提供对外暴露简便的入口来调用。
 
 一个 table 示例 - 事件绑定
@@ -720,7 +720,7 @@ h1 {
  * this.$emit('myEvent')
  */
 onSelectChange(selectedRowKeys, selectedRows) {
-  this.$emit(ON_SELECTED_DATA, this.selectedData);
+  this.$emit('ON_SELECTED_DATA', this.selectedData);
 }
 ```
 
@@ -765,7 +765,7 @@ h1 {
 
 ---
 
-# 开始一个项目 - 组件的诞生3
+# 制造组件 - 组件的诞生3
 > 前端组件化开发，将需要独立某个页面或者模块，以黑盒的形式全部封装到起来，提供对外暴露简便的入口来调用。
 
 一个 table 示例 - 内容插槽
@@ -802,6 +802,83 @@ h1 {
     </hbTablePage>
   </div>
 </template>
+```
+</div>
+</div>
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+
+-->
+
+---
+
+# 构建部署 - 按需加载
+> 上线问题千千万，打包问题一大半。
+
+<div class="grid grid-cols-2 gap-x-4">
+<div>
+
+* 路由加载
+```js {2,7-8}
+/* router.js 
+* 异步加载*/
+{
+  path: '/userLogin',
+  name: 'userLogin',
+  component: resolve => require(['@/views/user/Login'], 
+  resolve),
+}
+```
+```js {2,7-9}
+/* router.js 
+* 懒加载*/
+{
+  path: '/userLogin',
+  name: 'userLogin',
+  component:() =>import(
+  /* webpackChunkName: "userLogin" */ 
+  '../views/userLogin.vue')
+}
+```
+
+</div>
+
+<div>
+
+* 组件按需引入：
+```js
+/* babel-plugin-component
+* .babelrc */
+{
+  "presets": [["es2015", { "modules": false }]],
+  "plugins": [
+    ["component",{
+        "libraryName": "ant-design-vue",
+        "styleLibraryName": "theme-chalk"
+      }
+    ]
+  ]
+}
+```
+```js
+/* main.js or page.vue */
+import Vue from 'vue';
+import { Button, message } from 'ant-design-vue';
+
+Vue.use(Button);
+Vue.prototype.$message = message;
 ```
 </div>
 </div>
