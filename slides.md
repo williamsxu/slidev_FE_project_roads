@@ -284,7 +284,7 @@ xxxx
 
 1. 技术选型
 2. 开始一个项目
-3. 组件定制
+3. 组件建造
 4. 构建部署
 
 <style>
@@ -509,7 +509,7 @@ h1 {
 
 ---
 
-# 开始一个项目
+# 开始一个项目 - 初始化工程
 > Talk is cheap. Show me the code.  —— Linus Torvalds
 
 <br>
@@ -524,6 +524,10 @@ npm install -g @vue/cli
 ```sh
 vue create fintech-financeRecon-portal
 ```
+
+<br>
+
+* 当然，前提是需要有nodejs环境，npm包管理工具（国内使用npm缓慢，可以选用国内的「镜像源」）。
 
 <style>
 h1 {
@@ -543,7 +547,7 @@ h1 {
 
 ---
 
-# 开始一个项目 - 如何规范地开始
+# 开始一个项目 - 规范的开始
 > convention over configuration  约定优于配置
 
 * 规范工程结构
@@ -570,6 +574,237 @@ h1 {
 ├── .env.prod     // 生产环境配置
 ├── ...
 ```
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+约定优于配置（convention over configuration），也称作按约定编程，是一种软件设计范式，旨在减少软件开发人员需做决定的数量，获得简单的好处，而又不失灵活性。本质来说，系统、类库或框架应该假定合理的默认值，而非要求提供不必要的配置。比如说模型中有一个名为User的类，那么数据库中对应的表就会默认命名为user。只有在偏离这一个约定的时候，例如想要将该表命名为system_user，才需要写有关这个名字的配置。
+-->
+
+---
+
+# 开始一个项目 - 组件的组织
+> 不搞组件的前端不是个好前端。
+
+<div class="grid grid-cols-2 gap-x-4">
+<div>
+
+* 组件的组织
+<img src="/img/components.png" class="w-100"/>
+
+<p>例如，你可能会有页头、侧边栏、内容区等组件，每个组件又包含了其它的像导航链接、博文之类的组件。</p>
+<p>为了能在模板中使用，这些组件必须先注册以便 Vue 能够识别。可以进行<strong>全局注册</strong>和<strong>局部注册</strong>。</p>
+
+</div>
+<div>
+
+* 简单举例：通用fintech后台管理系统结构
+```sh
++---+---------------+
+|   | hbTablePage   |
++---+---------------+
+| M | search-bar    |
+| E | action-bar    |
+| N | data-table    |
+| U |               |
++---+---------------+
+```
+</div>
+</div>
+
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+
+-->
+
+---
+
+# 开始一个项目 - 组件的诞生1
+> 前端组件化开发，将需要独立某个页面或者模块，以黑盒的形式全部封装到起来，提供对外暴露简便的入口来调用。
+
+一个 table 示例 - 数据绑定
+<div class="grid grid-cols-2 gap-x-4">
+<div>
+
+* pros属性配置初始化数据：
+```js {7}
+/* TablePage.vue */
+props: {
+    dataTable: {
+      columns: [],
+      rowKey: "",
+    },
+    dataListFun: {
+      type: Function,
+    },
+  },
+```
+
+</div>
+<div>
+
+* 数据加载：
+```js {3}
+/* TablePage.vue */
+loadData() {
+  this.dataListFun(
+    this.pagination.pageNum,
+    this.pagination.pageSize,
+    this.searchCondition
+  ).then((res) => {
+    if (res.code == RESULT_CODE.SUCCESS) {
+      this.data = res.data.rows;
+    }
+  });
+},
+```
+</div>
+</div>
+<div style="color:rgba(200,16,46,1)"> 注意点：</div>
+
+- 所有的 prop 都使得其父子 prop 之间形成了一个单向下行绑定;每次父级组件发生变更时，子组件中所有的 prop 都将会刷新为最新的值。这意味着你不应该在一个子组件内部改变 prop。
+
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+
+-->
+
+---
+
+# 开始一个项目 - 组件的诞生2
+> 前端组件化开发，将需要独立某个页面或者模块，以黑盒的形式全部封装到起来，提供对外暴露简便的入口来调用。
+
+一个 table 示例 - 事件绑定
+<div class="grid grid-cols-2 gap-x-4">
+<div>
+
+* 传递绑定的事件：
+```js {7}
+/**
+ * TablePage.vue
+ * 列表选中一条数据事件
+ * this.$emit('myEvent')
+ */
+onSelectChange(selectedRowKeys, selectedRows) {
+  this.$emit(ON_SELECTED_DATA, this.selectedData);
+}
+```
+
+</div>
+<div>
+
+* 事件监听：
+```js {5}
+/* Page.vue */
+<template>
+  <div>
+    <hbTablePage
+      @ON_SELECTED_DATA="onSelectedData"
+    >
+    </hbTablePage>
+  </div>
+</template>
+```
+</div>
+</div>
+<div style="color:rgba(200,16,46,1)"> 注意点：</div>
+
+- 在有些情况下，我们可能需要对一个 prop 进行“双向绑定”。不幸的是，真正的双向绑定会带来维护上的问题;
+- 这也是为什么我们推荐以 update:myPropName 的模式触发事件取而代之。
+
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+
+-->
+
+---
+
+# 开始一个项目 - 组件的诞生3
+> 前端组件化开发，将需要独立某个页面或者模块，以黑盒的形式全部封装到起来，提供对外暴露简便的入口来调用。
+
+一个 table 示例 - 内容插槽
+<div class="grid grid-cols-2 gap-x-4">
+<div>
+
+* 定义自由组合的灵活的内容插槽：
+```js {2,6}
+/* TablePage.vue */
+<div v-if="$slots.searchBar">
+  <slot name="searchBar"></slot>
+  <a-divider dashed style="margin: 12px 0px" />
+</div>
+<div v-if="$slots.actionBar">
+  <slot name="actionBar"></slot>
+</div>
+```
+
+</div>
+<div>
+
+* 插槽填充：
+```js {5,8}
+/* Page.vue */
+<template>
+  <div>
+    <hbTablePage>
+      <template v-slot:searchBar>
+        <hbTableSearchBar />
+      </template>
+      <template v-slot:actionBar>
+        <hbTableActionBar />
+      </template>
+    </hbTablePage>
+  </div>
+</template>
+```
+</div>
+</div>
 
 <style>
 h1 {
