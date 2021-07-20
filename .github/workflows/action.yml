@@ -1,4 +1,4 @@
-name: buildAndDeploy
+name: action
 on:
   push
 jobs:
