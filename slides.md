@@ -191,7 +191,7 @@ h1 {
 > The only constant in the world is change.<br>
 > 世界上唯一不变的是变化。——《谁动了我的奶酪》作者 斯宾塞·约翰逊
 
-工程化之前遇到的问题：/*待补充图表*/
+工程化之前遇到的问题：
 <br>
 - 最早的前端开发就是实现页面，顶多再写写JS让页面可以有交互的特效。
 - 但是随着需求的增加，我们不仅要做Web应用，还要做App、小程序以及各种端。在这种需求日增的情况下，必须得考虑一种新的方式，优化前端的开发工作，
@@ -221,11 +221,34 @@ IT 行业变化太快了，尤其是前端开发（Frontend Development）。如
 # 什么是前端工程化?
 > 解放生产力、提高生产效率。通过制定相应的规范，借助一系列工具和手段解决整个工作流程中的痛点。
 
-特点：/*待补充图表*/
-- 模块化
-- 组件化
-- 规范化
-- 自动化
+特点：
+<div class="grid grid-cols-4 gap-x-4 gap-y-4 mt-4 mx-4">
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <h1 class="title mb-16 text-bg">模块化</h1>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">组件化</h1>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">规范化</h1>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">自动化</h1>
+  </div>
+</div>
+
+</div>
+
 
 以工程的角度去理解前端。工程是工程，而不是某项技术。
 
@@ -262,6 +285,11 @@ h1 {
 - CSS 模块化：Sass、Less、Stylus、BEM、CSS Modules 等。其中预处理器和 BEM 都会有的一个问题就是样式覆盖。而 CSS Modules 则是通过 JS 来管理依赖，最大化的结合了 JS 模块化和 CSS 生态，比如 Vue 中的 style scoped。
 - 资源模块化：任何资源都能以模块的形式进行加载，目前大部分项目中的文件、CSS、图片等都能直接通过 JS 做统一的依赖关系处理。
 
+<div class="inline-flex">
+  <img src="/img/node_module.png" class="rounded-xl w-80"/>
+  <img src="/img/webpack.png" class="mx-12 rounded-xl w-80"/>
+</div>
+
 <style>
 h1 {
   background-color: #2B90B6;
@@ -275,7 +303,7 @@ h1 {
 </style>
 
 <!--
-
+<!-- <iframe src="https://nodejs.org/docs/latest/api/modules.html" width="900" height="200"></iframe> -->
 -->
 
 ---
@@ -283,7 +311,11 @@ h1 {
 # 前端工程化--组件化
 > 不同于模块化，模块化是对文件、对代码和资源拆分，而组件化则是对 UI 层面的拆分。
 
-通常，我们会需要对页面进行拆分，将其拆分成一个一个的零件，然后分别去实现这一个个零件，最后再进行组装。 在我们的实际业务开发中，对于组件的拆分我们需要做不同程度的考量，其中主要包括细粒度和通用性这两块的考虑。 对于业务组件，你更多需要考量的是针对你负责业务线的一个适用度，即你设计的业务组件是否成为你当前业务的 “通用” 组件。
+- 通常，我们会需要对页面进行拆分，将其拆分成一个一个的零件，然后分别去实现这一个个零件，最后再进行组装。 
+- 在我们的实际业务开发中，对于组件的拆分我们需要做不同程度的考量，其中主要包括细粒度和通用性这两块的考虑。
+- 对于业务组件，你更多需要考量的是针对你负责业务线的一个适用度，即你设计的业务组件是否成为你当前业务的 “通用” 组件。
+
+<img src="/img/web-part.jpeg" class="shadow mx-60 rounded-xl w-80"/>
 
 <style>
 h1 {
@@ -314,6 +346,7 @@ h1 {
 - git flow 工作流：其中包含分支命名规范、代码合并规范等;
 - code review;
 
+<img src="/img/flow.jpeg" class="shadow mx-60 rounded-xl w-80"/>
 
 <style>
 h1 {
@@ -337,10 +370,11 @@ h1 {
 
 > 自动化合并、构建、打包能为我们节省很多工作。
 
-- webpack;
-- jenkins;
-- Docker;
+- webpack/parcel/ESbuild;
+- CI/CD;
+- 容器;
 
+<img src="/img/website-build.jpeg" class="shadow mx-60 rounded-xl w-80"/>
 
 <style>
 h1 {
@@ -384,7 +418,6 @@ xxxx
 ---
 
 # 如何开始 
-/*待补充图表*/
 
 1. 技术选型
 2. 初始化项目
@@ -1246,7 +1279,7 @@ h1 {
 
 <div class="container mx-auto">
   <div class="w-40 h-40 shadow rounded-2xl" style="display:flex;justify-content: center;align-items: center;">
-    <div style="color:rgba(200,16,46,1)">......</div>
+    ......
   </div>
 </div>
 
@@ -1279,82 +1312,6 @@ h1,h2 {
 }
 </style>
 
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div 
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
 
 ---
 
