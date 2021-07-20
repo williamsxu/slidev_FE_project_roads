@@ -12,6 +12,7 @@
     "playwright": "^1.12.1"
   },
   "name": "slidev",
+  "homepage": "https://williamsxu.github.io/slidev_FE_project_roads",
   "devDependencies": {
     "playwright-chromium": "^1.12.1"
   }
