@@ -1050,60 +1050,125 @@ h1 {
 
 ---
 
-# Code
-
-Use code snippets and get the highlighting directly!
-
-<!-- https://sli.dev/guide/syntax.html#line-highlighting -->
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
----
-
-# Components
+# 做个小结
+> 来！该做个小结了！
 
 <div grid="~ cols-2 gap-4">
 <div>
+<br>
 
-You can use Vue components directly inside your slides.
+* 至此，我们完成了最基础的从0到1的应用建造过程；
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+<br>
 
-```html
-<Counter :count="10" />
-```
+- 小结一下:
+1. 通过vue cli初始化了一个工程；
+2. 编写了一个「看起来简单的」组件；
+3. 利用各种手段在生产环境中更加「顺畅的」加载;
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+<br>
+<br>
+<br>
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
+更多VueJs的细节可以查看官网 [https://vuejs.org/](https://vuejs.org/).
 
 </div>
 <div>
 
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
 
 </div>
 </div>
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+---
+
+# Where to Go From Here?
+> 就这？是不是意犹未尽？<br>
+> 技术栈系列接下来可能会讨论更多...
+
+## 
+<div class="grid grid-cols-4 gap-x-4 gap-y-4 mt-4 mx-4">
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
+    align-items: center;">
+    <div style="color:rgba(200,16,46,1)">跨端技术</div>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
+    align-items: center;">
+    <div style="color:rgba(200,16,46,1)">大前端的演进</div>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
+    align-items: center;">
+    <div style="color:rgba(200,16,46,1)">性能指标与优化</div>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
+    align-items: center;">
+    <div style="color:rgba(200,16,46,1)">测试与安全</div>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
+    align-items: center;">
+    <div style="color:rgba(200,16,46,1)">Flutter实战</div>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
+    align-items: center;">
+    <div style="color:rgba(200,16,46,1)">前端智能化</div>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
+    align-items: center;">
+    <div style="color:rgba(200,16,46,1)">可视化技术与实战</div>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 shadow rounded-2xl" style="display:flex;justify-content: center;
+    align-items: center;">
+    <div style="color:rgba(200,16,46,1)">......</div>
+  </div>
+</div>
+
+</div>
+
+
+<style>
+h1,h2 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
 
 
 ---
@@ -1181,32 +1246,6 @@ const final = {
 [Learn More](https://sli.dev/guide/animations.html#motion)
 
 </div>
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
 
 ---
 
