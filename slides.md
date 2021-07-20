@@ -1100,57 +1100,49 @@ h1 {
 ## 
 <div class="grid grid-cols-4 gap-x-4 gap-y-4 mt-4 mx-4">
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
-    align-items: center;">
-    <div style="color:rgba(200,16,46,1)">跨端技术</div>
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <h1 class="title mb-16 text-bg">跨端技术</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
-    align-items: center;">
-    <div style="color:rgba(200,16,46,1)">大前端的演进</div>
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">大前端的演进</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
-    align-items: center;">
-    <div style="color:rgba(200,16,46,1)">性能指标与优化</div>
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">性能指标</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
-    align-items: center;">
-    <div style="color:rgba(200,16,46,1)">测试与安全</div>
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">测试与安全</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
-    align-items: center;">
-    <div style="color:rgba(200,16,46,1)">Flutter实战</div>
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">Flutter实战</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
-    align-items: center;">
-    <div style="color:rgba(200,16,46,1)">前端智能化</div>
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">前端智能化</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;
-    align-items: center;">
-    <div style="color:rgba(200,16,46,1)">可视化技术与实战</div>
+  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+      <h1 class="title mb-16 text-bg">可视化技术</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl" style="display:flex;justify-content: center;
-    align-items: center;">
+  <div class="w-40 h-40 shadow rounded-2xl" style="display:flex;justify-content: center;align-items: center;">
     <div style="color:rgba(200,16,46,1)">......</div>
   </div>
 </div>
@@ -1161,12 +1153,26 @@ h1 {
 <style>
 h1,h2 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-image: linear-gradient(30deg, #4EC5D4 10%, #146b8c 20%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent;
+}
+.title {
+    font-family: Montserrat,Georgia,Cambria;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgba(31,41,55,var(--tw-text-opacity));
+}
+.text-bg {
+    background-image: linear-gradient(0deg,rgba(153,255,213,.501961) 54%transparent 0,transparent);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
 }
 </style>
 
