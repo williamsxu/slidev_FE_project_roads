@@ -285,7 +285,7 @@ xxxx
 1. 技术选型
 2. 初始化项目
 3. 制造组件
-4. 构建部署
+4. 生产构建
 
 <style>
 h1 {
@@ -773,7 +773,7 @@ h1 {
 <div>
 
 * 定义自由组合的灵活的内容插槽：
-```js {2,6}
+```js {2,3,6,6}
 /* TablePage.vue */
 <div v-if="$slots.searchBar">
   <slot name="searchBar"></slot>
@@ -824,7 +824,7 @@ h1 {
 
 ---
 
-# 构建部署 - 按需加载
+# 生产构建 - 按需加载
 > 上线问题千千万，打包问题一大半。
 
 <div class="grid grid-cols-2 gap-x-4">
@@ -864,11 +864,9 @@ h1 {
 {
   "presets": [["es2015", { "modules": false }]],
   "plugins": [
-    ["component",{
-        "libraryName": "ant-design-vue",
-        "styleLibraryName": "theme-chalk"
-      }
-    ]
+    ["component",
+        {"libraryName": "ant-design-vue",
+        "styleLibraryName": "theme-chalk"}]
   ]
 }
 ```
@@ -879,6 +877,83 @@ import { Button, message } from 'ant-design-vue';
 
 Vue.use(Button);
 Vue.prototype.$message = message;
+```
+</div>
+</div>
+
+* 当然，采用CDN（开源的https://cdn.jsdelivr.net/）、分割chunk包、模板预编译等也是常用的手段；
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+
+-->
+
+---
+
+# 生产构建 - 压缩再压缩1
+> 上线问题千千万，打包问题一大半。
+
+<div class="grid grid-cols-2 gap-x-4">
+<div>
+
+* 图片压缩
+```js
+/* image-webpack-loader
+* vue.config.js */
+{
+  test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+  use:[{
+    loader: 'url-loader',
+    options: {
+      limit: 10000,
+      name: utils.assetsPath('img/[name].[hash:7].[ext]')
+      }
+    },{
+      loader: 'image-webpack-loader',
+      options: {
+        bypassOnDebug: true,
+      }
+    }]
+}
+```
+
+</div>
+
+<div>
+
+* 提取公共代码：
+```js
+/* CommonsChunkPlugin
+* vue.config.js 
+* package.json 里依赖的包，都会被打包进 vendor.js 文件中 */
+new webpack.optimize.CommonsChunkPlugin({
+  name: 'vendor',
+  minChunks: function(module, count) {
+    return (
+      module.resource &&
+      /\.js$/.test(module.resource) &&
+      module.resource.indexOf(
+        path.join(__dirname, '../node_modules')
+      ) === 0
+    );
+  }
+}),
+/* 抽取出代码模块的映射关系 */
+new webpack.optimize.CommonsChunkPlugin({
+  name: 'manifest',
+  chunks: ['vendor']
+})
 ```
 </div>
 </div>
@@ -896,6 +971,80 @@ h1 {
 </style>
 
 <!--
+如果项目中没有去将每个页面的第三方库和公共模块提取出来，则项目会存在以下问题：
+
+相同的资源被重复加载，浪费用户的流量和服务器的成本。
+每个页面需要加载的资源太大，导致网页首屏加载缓慢，影响用户体验。
+
+-->
+
+---
+
+# 生产构建 - 压缩再压缩2
+> 上线问题千千万，打包问题一大半。
+
+<div class="grid grid-cols-2 gap-x-4">
+<div>
+
+* 去除 ES6 转为 ES5 的冗余代码
+```js
+/* babel-plugin-transform-runtime
+* .babelrc */
+"plugins": [
+    "transform-runtime"
+]
+```
+- ### Babel 插件会在将 ES6 代码转换成 ES5 代码时会注入一些辅助函数，多次引用会造成多次重复生成。
+- ### 通过require('babel-runtime/helpers/createClass') 的方式导入，做到只生成一次。
+
+</div>
+
+<div>
+
+* gzip压缩：
+```js
+/* compression-webpack-plugin@5.0.1
+* vue.config.js 
+* 会打包生成.gz格式文件 */
+const CompressionPlugin = require("compression-webpack-plugin");
+configureWebpack: {
+    plugins: [
+      new CompressionPlugin({
+        filename: "[path].gz",
+        algorithm: "gzip",
+        test: /\.js$|\.css$|\.html$/,
+        threshold: 10240, // //压缩超过此大小的文件,以字节为单位
+        minRatio: 0.8,
+        deleteOriginalAssets: false
+      })]
+  }
+```
+```sh
+/* nginx.conf 
+* nginx开启gzip */
+gzip  on;  #开启gzip
+...
+```
+</div>
+</div>
+
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+如果项目中没有去将每个页面的第三方库和公共模块提取出来，则项目会存在以下问题：
+
+相同的资源被重复加载，浪费用户的流量和服务器的成本。
+每个页面需要加载的资源太大，导致网页首屏加载缓慢，影响用户体验。
 
 -->
 
