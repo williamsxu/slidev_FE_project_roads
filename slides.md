@@ -51,20 +51,121 @@ layout: 'intro'
 
 ---
 
-# 前端到底是什么?
+# 怎么看前端?
 
 > 前端开发是创建WEB页面或APP等前端界面呈现给用户的过程，通过HTML，CSS及JavaScript以及衍生出来的各种技术、框架、解决方案，来实现互联网产品的用户界面交互。 —— 百度百科
 
-<br>
+前端技术演进历史：
+<div class="grid grid-cols-5 gap-x-4">
+<div class="shadow">
+<div class="mx-5" style="color:rgba(200,16,46,1)">
 
-前端技术演进历史：/*待补充图表*/
-- **上古时代（1990-2004）** - 静态页面—>javascript-->动态页面
-- **web2.0时代（2004-2008）** - 动态交互、数据交互的需求增多 | Ajax开始流行、异步Http请求（典型代表jQuery）
-- **发展大爆炸时代（2008-2015）** - 谷歌 V8 引擎发布 | 2009年 Node.js爆发 ｜ MCV、MVVM、SPA应用框架(典型代表Angular、React、Vue)
-- **今天的前端（2015-2020）** - 跨端（小程序、跨容器、跨平台、跨OS）｜ 标准成熟（ECMA、包管理、构建、框架、nodejs、Hybrid ...）
-- **未来的前端（2020~）** - 可视化 ｜ 智能化｜ 工具链 | serverless | lowcode/nocode ｜ WebAssembly
-<br>
-<br>
+**上古时代**<br>
+**1990 - 2004**
+</div>
+<div class="mx-4 sub-title">
+
+* 静态页面
+</div>
+<div class="mx-4 sub-title">
+
+* js诞生
+</div>
+<div class="mx-4 sub-title">
+
+* 简单交互
+</div>
+</div>
+
+<div class="shadow">
+<div class="mx-5" style="color:rgba(200,16,46,1)">
+
+**web2.0时代**<br>
+**2004 - 2008**
+</div>
+<div class="mx-4 sub-title">
+
+* 交互需求增多
+</div>
+<div class="mx-4 sub-title">
+
+* Ajax流行、异步请求
+</div>
+<div class="mx-4 sub-title">
+
+* 典型:jQuery
+</div>
+</div>
+
+<div class="shadow">
+<div class="mx-4" style="color:rgba(200,16,46,1)">
+
+**发展大爆炸时代**<br>
+**2008 - 2015**
+</div>
+<div class="mx-4 sub-title">
+
+* V8引擎发布
+</div>
+<div class="mx-4 sub-title">
+
+* Node.js爆发
+</div>
+<div class="mx-4 sub-title">
+
+* MVVM/MVC<br>/SPA等类型应用
+</div>
+</div>
+
+<div class="shadow">
+<div class="mx-5" style="color:rgba(200,16,46,1)">
+
+**今天的前端**<br>
+**2015 - 2020**
+</div>
+<div class="mx-4 sub-title">
+
+* 小程序、跨容器、跨平台、跨OS等跨端
+</div>
+<div class="mx-4 sub-title">
+
+* 包管理、构建、框架、混合等标准成熟
+</div>
+</div>
+
+<div class="shadow">
+<div class="mx-5" style="color:rgba(200,16,46,1)">
+
+**未来的前端**<br>
+**2020 ~ ?**
+</div>
+<div class="mx-4 sub-title">
+
+* 可视化
+</div>
+<div class="mx-4 sub-title">
+
+* 智能化
+</div>
+<div class="mx-4 sub-title">
+
+* 工具链
+</div>
+<div class="mx-4 sub-title">
+
+* serverless
+</div>
+<div class="mx-4 sub-title">
+
+* lowcode/nocode
+</div>
+<div class="mx-4 sub-title">
+
+* WebAssembly
+</div>
+</div>
+
+</div>
 
 
 <style>
@@ -76,6 +177,9 @@ h1 {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent;
+}
+.sub-title{
+  color:#505759;line-height:33px;
 }
 </style>
 <!--
@@ -1097,7 +1201,6 @@ h1 {
 > 就这？是不是意犹未尽？<br>
 > 技术栈系列接下来可能会讨论更多...
 
-## 
 <div class="grid grid-cols-4 gap-x-4 gap-y-4 mt-4 mx-4">
 <div class="container mx-auto">
   <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
