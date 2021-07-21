@@ -13,6 +13,7 @@
   },
   "name": "slidev",
   "devDependencies": {
-    "playwright-chromium": "^1.12.1"
+    "playwright-chromium": "^1.12.1",
+    "vite-plugin-remote-assets": "^0.2.2"
   }
 }
