@@ -57,7 +57,7 @@ layout: 'intro'
 
 前端技术演进历史：
 <div class="grid grid-cols-5 gap-x-4">
-<div class="shadow">
+<div>
 <div class="mx-5" style="color:rgba(200,16,46,1)">
 
 **上古时代**<br>
@@ -77,7 +77,7 @@ layout: 'intro'
 </div>
 </div>
 
-<div class="shadow">
+<div>
 <div class="mx-5" style="color:rgba(200,16,46,1)">
 
 **web2.0时代**<br>
@@ -97,7 +97,7 @@ layout: 'intro'
 </div>
 </div>
 
-<div class="shadow">
+<div>
 <div class="mx-4" style="color:rgba(200,16,46,1)">
 
 **发展大爆炸时代**<br>
@@ -117,7 +117,7 @@ layout: 'intro'
 </div>
 </div>
 
-<div class="shadow">
+<div>
 <div class="mx-5" style="color:rgba(200,16,46,1)">
 
 **今天的前端**<br>
@@ -133,7 +133,7 @@ layout: 'intro'
 </div>
 </div>
 
-<div class="shadow">
+<div>
 <div class="mx-5" style="color:rgba(200,16,46,1)">
 
 **未来的前端**<br>
@@ -224,25 +224,25 @@ IT 行业变化太快了，尤其是前端开发（Frontend Development）。如
 特点：
 <div class="grid grid-cols-4 gap-x-4 gap-y-4 mt-4 mx-4">
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
   <h1 class="title mb-16 text-bg">模块化</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
     <h1 class="title mb-16 text-bg">组件化</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
     <h1 class="title mb-16 text-bg">规范化</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
     <h1 class="title mb-16 text-bg">自动化</h1>
   </div>
 </div>
@@ -281,14 +281,14 @@ h1 {
 # 前端工程化--模块化
 > 模块化是指将一个文件拆分成多个相互依赖的文件，最后进行统一的打包和加载，这样能够很好的保证高效的多人协作。
 
+<div class="grid grid-cols-2 gap-x-8">
+  <img src="/img/node_module.png" class="rounded-xl w-60 mx-20"/>
+  <img src="/img/webpack.png" class="mx-12 rounded-xl w-60"/>
+</div>
+
 - JS 模块化：CommonJS、AMD、CMD 以及 ES6 Module。
 - CSS 模块化：Sass、Less、Stylus、BEM、CSS Modules 等。其中预处理器和 BEM 都会有的一个问题就是样式覆盖。而 CSS Modules 则是通过 JS 来管理依赖，最大化的结合了 JS 模块化和 CSS 生态，比如 Vue 中的 style scoped。
 - 资源模块化：任何资源都能以模块的形式进行加载，目前大部分项目中的文件、CSS、图片等都能直接通过 JS 做统一的依赖关系处理。
-
-<div class="inline-flex">
-  <img src="/img/node_module.png" class="rounded-xl w-80"/>
-  <img src="/img/webpack.png" class="mx-12 rounded-xl w-80"/>
-</div>
 
 <style>
 h1 {
@@ -315,7 +315,7 @@ h1 {
 - 在我们的实际业务开发中，对于组件的拆分我们需要做不同程度的考量，其中主要包括细粒度和通用性这两块的考虑。
 - 对于业务组件，你更多需要考量的是针对你负责业务线的一个适用度，即你设计的业务组件是否成为你当前业务的 “通用” 组件。
 
-<img src="/img/web-part.jpeg" class="shadow mx-60 rounded-xl w-80"/>
+<img src="/img/web-part.jpeg" class="mx-60 rounded-xl w-80"/>
 
 <style>
 h1 {
@@ -346,7 +346,7 @@ h1 {
 - git flow 工作流：其中包含分支命名规范、代码合并规范等;
 - code review;
 
-<img src="/img/flow.jpeg" class="shadow mx-60 rounded-xl w-80"/>
+<img src="/img/flow.jpeg" class="mx-60 rounded-xl w-80"/>
 
 <style>
 h1 {
@@ -374,7 +374,7 @@ h1 {
 - CI/CD;
 - 容器;
 
-<img src="/img/website-build.jpeg" class="shadow mx-60 rounded-xl w-80"/>
+<img src="/img/website-build.jpeg" class="mx-60 rounded-xl w-80"/>
 
 <style>
 h1 {
@@ -418,11 +418,36 @@ xxxx
 ---
 
 # 如何开始 
+> Well begun is half done.<br>
+> 好的开始，是成功的一半。 —— 贺拉斯
 
-1. 技术选型
-2. 初始化项目
-3. 制造组件
-4. 生产构建
+<div class="grid grid-cols-4 gap-x-4 gap-y-4 mt-16 mx-4">
+<div class="container mx-auto">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <h1 class="title mb-16 text-bg">技术选型</h1>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">开始工程</h1>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">制造组件</h1>
+  </div>
+</div>
+
+<div class="container mx-auto">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+    <h1 class="title mb-16 text-bg">生产构建</h1>
+  </div>
+</div>
+
+</div>
+
 
 <style>
 h1 {
@@ -1236,49 +1261,49 @@ h1 {
 
 <div class="grid grid-cols-4 gap-x-4 gap-y-4 mt-4 mx-4">
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
   <h1 class="title mb-16 text-bg">跨端技术</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
     <h1 class="title mb-16 text-bg">大前端的演进</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
     <h1 class="title mb-16 text-bg">性能指标</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
     <h1 class="title mb-16 text-bg">测试与安全</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
     <h1 class="title mb-16 text-bg">Flutter实战</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
     <h1 class="title mb-16 text-bg">前端智能化</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl inset-0 bg-gradient-to-r from-blue-400 to-green-200" style="display:flex;justify-content: center;align-items: center;">
       <h1 class="title mb-16 text-bg">可视化技术</h1>
   </div>
 </div>
 
 <div class="container mx-auto">
-  <div class="w-40 h-40 shadow rounded-2xl" style="display:flex;justify-content: center;align-items: center;">
+  <div class="w-40 h-40 rounded-2xl" style="display:flex;justify-content: center;align-items: center;">
     ......
   </div>
 </div>
@@ -1344,6 +1369,8 @@ xxxx
 
 - 从0初始化一个基于vuejs的web应用;
 - 利用vuejs的特性定制一个日历组件；
+
+<img src="/img/programmer.png" class="mx-60 rounded-xl w-100"/>
 
 <style>
 h1 {
