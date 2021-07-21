@@ -11,7 +11,7 @@ jobs:
     - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
     - name: buildAndDeploy
-      uses: williamsxu/slidev_FE_project_roads@main
+      uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 使用刚新建的secret
         BRANCH: gh-pages # 存放产物的分支名称
