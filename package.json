@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "slidev --open",
-    "build": "slidev build",
+    "build": "slidev build --base /slidev_FE_project_roads/",
     "export": "slidev export"
   },
   "dependencies": {
