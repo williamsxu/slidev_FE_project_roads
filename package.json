@@ -2,11 +2,11 @@
   "private": true,
   "scripts": {
     "dev": "slidev --open",
-    "build": "slidev build --base /slidev_FE_project_roads/",
+    "build": "slidev build --base /slidev_FE_project_roads111/",
     "export": "slidev export"
   },
   "dependencies": {
-    "@slidev/cli": "^0.20.4",
+    "@slidev/cli": "^0.25.4",
     "@slidev/theme-default": "*",
     "@slidev/theme-seriph": "*",
     "playwright": "^1.12.1"
